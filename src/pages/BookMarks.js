@@ -12,8 +12,8 @@ const Bookmarks = () => {
   const handleDelete = (index) => {
     const newBookmarks = [...bookmarksList];
     const deletedQuote = newBookmarks.splice(index, 1)[0];
-    localStorage.setItem("bookMarks", JSON.stringify(newBookmarks));
     setBookmarksList(newBookmarks);
+    localStorage.setItem("bookMarks", JSON.stringify(newBookmarks));
     console.log(
       `Deleted quote: ${deletedQuote.quote} by ${deletedQuote.author}`
     );
@@ -21,10 +21,11 @@ const Bookmarks = () => {
 
   return (
     <div
-      className="bg-white h-screen py-10 px-20  sm:px-10 grid grid-cols-1 gap-1"
-      style={{
-        backgroundImage: `url(/images/166.jpg)`,
-      }}
+      className="bg-transparent h-screen py-10 sm:px-10 grid grid-cols-1 gap-1"
+      // style={{
+      //   backgroundImage: `url(/images/166.jpg)`,
+      //   backgroundRepeat: "no-repeat",
+      // }}
     >
       {bookmarksList &&
         bookmarksList.map(({ quote, author }, index) => {
